@@ -3,6 +3,7 @@ class_name Fox
 
 @onready var animation_player = $AnimationPlayer
 @onready var animation_sprite = $Sprite2D
+@onready var nametag = $Nametag
 
 @export var primary_name:String =""
 @export var speed = 30
@@ -117,6 +118,11 @@ class TaskGather:
 
 var schedule:Array[Task] = [TaskRest.new()]
 
+func rename(new_name:String):
+	
+	secondary_name = new_name
+	nametag.text = new_name
+
 func compute_order(orders:Array[Order.SingleOrder]):
 	
 	for order in orders:
@@ -124,7 +130,8 @@ func compute_order(orders:Array[Order.SingleOrder]):
 			Order.OrderType.REST:
 				self.rest()
 			Order.OrderType.RENAME:
-				secondary_name = order.new_name
+				rename(order.new_name)
+				
 			Order.OrderType.GATHER:
 				schedule.insert(0, TaskGather.new(order.resource, 1))
 
@@ -144,6 +151,7 @@ func _ready() -> void:
 	
 	animation_player.play("idle")
 	EntityManager.register_fox(self)
+	nametag.text = primary_name
 
 func _physics_process(delta: float) -> void:
 	

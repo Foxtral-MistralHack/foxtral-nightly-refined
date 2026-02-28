@@ -47,6 +47,8 @@ var mistral_llm_client:MistralLlm
 
 var _flush_timer: Timer = null
 
+const order_number_character=70
+
 var _api_key: String = "MoEMaEZrUWjBNdsmQoyTigL9ylcy5Y9X"
 
 var sentence_parsed:String = ""
@@ -92,7 +94,11 @@ func _on_tts_ready(tts_text:String):
 	
 	sentence_parsed+=tts_text
 	
-	print(sentence_parsed)
+	if sentence_parsed.length() > order_number_character:
+		sentence_parsed = sentence_parsed.substr(sentence_parsed.length() - order_number_character)
+	
+	GuiManager.change_caption(sentence_parsed)
+
 	
 	if llm_available:
 		
@@ -117,6 +123,8 @@ func _on_llm_completion_received(response: Dictionary):
 			
 			EntityManager.execute_order(new_order)
 			sentence_parsed=""
+			GuiManager.change_caption("")
+			
 	
 	llm_available = true
 	
