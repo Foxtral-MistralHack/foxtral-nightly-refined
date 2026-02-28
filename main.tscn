@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://df2vmsmqb4h5u" path="res://sprite/AnimatedTrees/AnimatedClassicalTrees/AnimatedAutum.png" id="6_7mycd"]
 [ext_resource type="Texture2D" uid="uid://cc1hxe1tenx2i" path="res://sprite/AnimatedTrees/AnimatedClassicalTrees/AnimatedTreeStartAutumn.png" id="7_272bh"]
 [ext_resource type="Script" uid="uid://8owxvcvhuhmd" path="res://environment/resource_point.gd" id="8_5vw27"]
+[ext_resource type="PackedScene" uid="uid://dmenalp2dxn8d" path="res://entity/chicken.tscn" id="9_kek77"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2yge"]
 texture = ExtResource("2_0xm2m")
@@ -509,7 +510,31 @@ script = ExtResource("8_5vw27")
 resource_type = 2
 metadata/_custom_type_script = "uid://8owxvcvhuhmd"
 
+[node name="FoodPoint" type="Node2D" parent="." unique_id=792798627]
+position = Vector2(278, 29)
+script = ExtResource("8_5vw27")
+resource_type = 3
+metadata/_custom_type_script = "uid://8owxvcvhuhmd"
+
 [node name="ForestPoint" type="Node2D" parent="." unique_id=1064745733]
 position = Vector2(43.000004, 48)
 script = ExtResource("8_5vw27")
 metadata/_custom_type_script = "uid://8owxvcvhuhmd"
+
+[node name="Chicken" parent="." unique_id=952782131 instance=ExtResource("9_kek77")]
+position = Vector2(270, 32)
+
+[node name="Chicken2" parent="." unique_id=17281212 instance=ExtResource("9_kek77")]
+position = Vector2(289, 26)
+
+[node name="Chicken3" parent="." unique_id=935724110 instance=ExtResource("9_kek77")]
+position = Vector2(282, 47)
+
+[node name="Chicken4" parent="." unique_id=607639906 instance=ExtResource("9_kek77")]
+position = Vector2(244, 24)
+
+[node name="Chicken5" parent="." unique_id=345738391 instance=ExtResource("9_kek77")]
+position = Vector2(246, 54)
+
+[node name="Chicken6" parent="." unique_id=758286615 instance=ExtResource("9_kek77")]
+position = Vector2(311, 32)

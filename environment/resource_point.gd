@@ -6,13 +6,15 @@ class_name ResourcePoint
 enum ResourcePointType {
 	WOOD,
 	ROCK,
-	HOUSE
+	HOUSE,
+	FOOD
 }
 
 const place_name = {
 	ResourcePointType.WOOD:"wood",
 	ResourcePointType.ROCK:"rock",
-	ResourcePointType.HOUSE:"house"
+	ResourcePointType.HOUSE:"house",
+	ResourcePointType.FOOD:"food"
 }
 
 func _ready() -> void:

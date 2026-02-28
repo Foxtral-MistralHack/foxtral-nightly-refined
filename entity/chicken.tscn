@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://dmenalp2dxn8d"]
+
+[ext_resource type="Script" uid="uid://c82ovw48ufthb" path="res://entity/chicken.gd" id="1_77vgm"]
+[ext_resource type="Texture2D" uid="uid://bpl2583s2otjm" path="res://sprite/ForestAnimals/Chicken_Sprite_Sheet.png" id="2_thl7o"]
+
+[sub_resource type="Animation" id="Animation_3gv0d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_rqe63"]
+resource_name = "sit"
+length = 0.4
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 2), Vector2i(1, 2), Vector2i(2, 2), Vector2i(3, 2)]
+}
+
+[sub_resource type="Animation" id="Animation_s577b"]
+resource_name = "walk"
+length = 0.4
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0), Vector2i(2, 0), Vector2i(3, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oqhh1"]
+_data = {
+&"RESET": SubResource("Animation_3gv0d"),
+&"sit": SubResource("Animation_rqe63"),
+&"walk": SubResource("Animation_s577b")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_77vgm"]
+radius = 5.25
+
+[node name="Chicken" type="CharacterBody2D" unique_id=952782131]
+scale = Vector2(0.5, 0.5)
+motion_mode = 1
+script = ExtResource("1_77vgm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=230331716]
+libraries/ = SubResource("AnimationLibrary_oqhh1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1813408881]
+position = Vector2(0, -11.47)
+texture = ExtResource("2_thl7o")
+hframes = 4
+vframes = 4
+frame = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=433034327]
+position = Vector2(0, -3.265)
+shape = SubResource("CircleShape2D_77vgm")

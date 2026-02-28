@@ -10,7 +10,8 @@ const random_moving_time = 3
 
 const Token: PackedScene = preload("res://entity/resource_token.tscn")
 
-const gather_area = 20
+const gather_area = 30
+const drop_scatter_radius = 10
 
 var secondary_name:String = ""
 
@@ -77,11 +78,13 @@ class TaskGather:
 	var house = ResourceManager.select_resource_by_name("house")
 	
 	var target_position:Vector2
+	var house_position:Vector2
 	
 	func _init(a_resource:String,a_amount:int=1):
 		type = TaskType.GATHER
 		resource=ResourceManager.select_resource_by_name(a_resource)
 		amount=a_amount
+		house_position = house.get_position()+ Vector2(randf_range(-1, 1), randf_range(-1, 1)) * drop_scatter_radius
 		
 		target_position = resource.get_position()+Vector2(randf_range(-1,1),randf_range(-1,1))*gather_area
 		
@@ -103,9 +106,10 @@ class TaskGather:
 				resource_token.position = fox.mouse_pos
 		else:
 			resource_token.position = fox.mouse_pos
-			fox.velocity= fox.get_position().direction_to(house.position)*fox.speed
+			fox.velocity= fox.get_position().direction_to(house_position)*fox.speed
 			
-			if (fox.get_position()-house.position).length()<5:
+			if (fox.get_position()-house_position).length()<5:
+
 				resource_token.reparent(fox.get_parent())
 				return true
 		
@@ -164,4 +168,8 @@ func _physics_process(delta: float) -> void:
 		
 		
 	move_and_slide()
+	
+	if get_slide_collision_count() > 0:
+		var collision = get_slide_collision(0)
+		velocity += collision.get_normal() * speed * 0.5
 		

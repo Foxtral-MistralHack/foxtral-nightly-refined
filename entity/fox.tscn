@@ -149,10 +149,13 @@ _data = {
 &"running": SubResource("Animation_pcpmy")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kpck0"]
-size = Vector2(14, 5)
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_e6553"]
+points = PackedVector2Array(5, 0, 0, 2, -5, 0, 0, -2)
 
 [node name="Fox" type="CharacterBody2D" unique_id=262196930]
+motion_mode = 1
+floor_stop_on_slope = false
+floor_block_on_wall = false
 script = ExtResource("1_kpck0")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2021168455]
@@ -167,5 +170,5 @@ vframes = 8
 frame = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1084630122]
-position = Vector2(0, -2.5)
-shape = SubResource("RectangleShape2D_kpck0")
+position = Vector2(0, -0.81)
+shape = SubResource("ConvexPolygonShape2D_e6553")

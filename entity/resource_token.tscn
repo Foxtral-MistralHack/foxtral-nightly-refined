@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dpltxavt8183p" path="res://entity/resource_token.gd" id="1_5uy2v"]
 [ext_resource type="Texture2D" uid="uid://cv6mrm244rj3l" path="res://sprite/Decorations/Woods.png" id="1_sd0et"]
 [ext_resource type="Texture2D" uid="uid://byah2oqs3yxvw" path="res://sprite/Rocks/ClassicalRocks/Rock1.png" id="3_qx8jl"]
+[ext_resource type="Texture2D" uid="uid://c441q0s7ttvhd" path="res://sprite/ForestAnimals/egg.png" id="4_edf7u"]
 
 [node name="ResourceToken" type="Node2D" unique_id=1605956705]
 script = ExtResource("1_5uy2v")
@@ -18,3 +19,8 @@ visible = false
 position = Vector2(-5.9604645e-08, -4)
 scale = Vector2(0.12890625, 0.12890625)
 texture = ExtResource("3_qx8jl")
+
+[node name="Egg" type="Sprite2D" parent="." unique_id=1863292734]
+visible = false
+scale = Vector2(0.035, 0.035)
+texture = ExtResource("4_edf7u")
