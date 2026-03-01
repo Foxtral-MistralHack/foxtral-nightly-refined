@@ -24,8 +24,6 @@ func try_consume(resource_type: ResourcePoint.ResourcePointType, amount: int) ->
 		t.queue_free()
 	return true
 
-func register_token(resource_token:ResourceToken):
-	token_list.append(resource_token)
 	
 func get_resource_count(type: ResourcePoint.ResourcePointType) -> int:
 	var count = 0

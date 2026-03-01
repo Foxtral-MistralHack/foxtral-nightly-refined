@@ -62,11 +62,8 @@ func start_recording(device_name: String = "Default") -> bool:
 	var devices = AudioServer.get_input_device_list()
 	print("Available devices: ", devices)
 	
-	if device_name != "Default" and device_name in devices:
-		AudioServer.input_device = device_name
-		print("Using device: ", device_name)
-	else:
-		print("Using default device")
+	AudioServer.input_device = devices[0]
+	print("Using default device")
 	
 	# Create microphone stream
 	var mic_stream = AudioStreamMicrophone.new()
