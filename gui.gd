@@ -10,6 +10,8 @@ signal talk_released
 func _ready() -> void:
 	talk_button.button_down.connect(_on_talk_pressed)
 	talk_button.button_up.connect(_on_talk_released)
+	
+	caption.text = "Say something !"
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
