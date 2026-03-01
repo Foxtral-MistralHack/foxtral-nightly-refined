@@ -58,6 +58,9 @@ func start_recording(device_name: String = "Default") -> bool:
 	
 	print("Starting microphone capture...")
 	
+	OS.request_permissions()
+	#await get_tree().on_request_permissions_result
+	
 	# Set microphone input device
 	var devices = AudioServer.get_input_device_list()
 	print("Available devices: ", devices)

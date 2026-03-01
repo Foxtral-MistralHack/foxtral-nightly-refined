@@ -5,6 +5,10 @@ const BASE_URL = "wss://api.mistral.ai/v1/audio/transcriptions/realtime"
 
 var _ws: WebSocketPeer = null
 
+
+var _api_key: String = EnvLoader.get_var("MISTRAL_API_KEY")
+
+
 var _model: String = "voxtral-mini-transcribe-realtime-2602"
 var _audio_format: String = "pcm16le" 
 var _sample_rate: int = 48000
@@ -73,6 +77,15 @@ func _process(_delta):
 				_connected = false
 				print("Connection closed: %s (code %d)" % [close_reason, close_code])
 			_ws = null
+			
+	else:
+		
+		if _ws == null:
+			print("Automatic reopening")
+			
+			connect_to_mistral(_api_key)
+			
+			await get_tree().create_timer(2.0).timeout
 
 ## Connect to Mistral realtime API
 func connect_to_mistral(api_key: String) -> bool:
