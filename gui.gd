@@ -9,9 +9,7 @@ signal talk_pressed
 signal talk_released
 
 func _ready() -> void:
-	
-	OS.request_permissions()
-	
+		
 	talk_button.button_down.connect(_on_talk_pressed)
 	talk_button.button_up.connect(_on_talk_released)
 	
