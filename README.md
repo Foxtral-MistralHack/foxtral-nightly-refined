@@ -1,3 +1,7 @@
+*Hackathon release is on commit :* 7abfbd95839f91db0e6e7b7cc83d2c966cd3f5c6
+
+Due to the use and commit of paid asset this repository will be put in private at the end of the hackathon.
+
 ![Slide 1](slide1.png)
 ![Slide 2](slide2.png)
 ![Slide 3](slide3.png)
