@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dmenalp2dxn8d"]
 
 [ext_resource type="Script" uid="uid://c82ovw48ufthb" path="res://entity/chicken.gd" id="1_77vgm"]
-[ext_resource type="Texture2D" uid="uid://bpl2583s2otjm" path="res://sprite/ForestAnimals/Chicken_Sprite_Sheet.png" id="2_thl7o"]
+[ext_resource type="Texture2D" uid="uid://da5q7awgmn01p" path="res://sprite/Chicken_Sprite_Sheet.png" id="2_77vgm"]
 
 [sub_resource type="Animation" id="Animation_3gv0d"]
 length = 0.001
@@ -73,7 +73,7 @@ libraries/ = SubResource("AnimationLibrary_oqhh1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1813408881]
 position = Vector2(0, -11.47)
-texture = ExtResource("2_thl7o")
+texture = ExtResource("2_77vgm")
 hframes = 4
 vframes = 4
 frame = 8

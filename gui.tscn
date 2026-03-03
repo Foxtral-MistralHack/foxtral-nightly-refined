@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://jf6fywnq218d" path="res://gui.gd" id="1_6lon5"]
 [ext_resource type="Theme" uid="uid://6a3t6mbsq2ng" path="res://font/main_theme.tres" id="2_q8o8l"]
-[ext_resource type="Texture2D" uid="uid://cv6mrm244rj3l" path="res://sprite/Decorations/Woods.png" id="3_wood"]
-[ext_resource type="Texture2D" uid="uid://byah2oqs3yxvw" path="res://sprite/Rocks/ClassicalRocks/Rock1.png" id="4_rock"]
-[ext_resource type="Texture2D" uid="uid://c441q0s7ttvhd" path="res://sprite/ForestAnimals/egg.png" id="5_egg"]
+[ext_resource type="Texture2D" uid="uid://cv6mrm244rj3l" path="res://sprite/Woods.png" id="3_wood"]
+[ext_resource type="Texture2D" uid="uid://byah2oqs3yxvw" path="res://sprite/Rock1.png" id="4_rock"]
+[ext_resource type="Texture2D" uid="uid://c441q0s7ttvhd" path="res://sprite/egg.png" id="5_egg"]
 [ext_resource type="Texture2D" uid="uid://7h6dsa2k4rry" path="res://sprite/house.png" id="6_house"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_recipe"]

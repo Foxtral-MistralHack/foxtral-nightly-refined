@@ -2,7 +2,7 @@ extends SceneTree
 
 func _init():
 	var img = Image.new()
-	var err = img.load("res://sprite/ForestAnimals/FoxSoftColors.png")
+	var err = img.load("res://sprite/FoxSoftColors.png")
 	if err == OK:
 		var colors = {}
 		for y in range(img.get_height()):

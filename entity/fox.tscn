@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dl0ul3t5cbxpa"]
 
 [ext_resource type="Script" uid="uid://m0hua2546bnp" path="res://entity/fox.gd" id="1_kpck0"]
-[ext_resource type="Texture2D" uid="uid://i6c7r1hovlgl" path="res://sprite/ForestAnimals/FoxSoftColors.png" id="2_k0xb2"]
+[ext_resource type="Texture2D" uid="uid://i6c7r1hovlgl" path="res://sprite/FoxSoftColors.png" id="2_k0xb2"]
 [ext_resource type="Theme" uid="uid://6a3t6mbsq2ng" path="res://font/main_theme.tres" id="3_1j122"]
 
 [sub_resource type="Animation" id="Animation_kpck0"]

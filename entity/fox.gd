@@ -233,7 +233,7 @@ func _ready() -> void:
 
 
 	hunger_sprite = Sprite2D.new()
-	hunger_sprite.texture = load("res://sprite/FruitsVegetables/Fruits.png")
+	hunger_sprite.texture = load("res://sprite/Fruits.png")
 	hunger_sprite.region_enabled = true
 	hunger_sprite.position = Vector2(16, -8)
 	hunger_sprite.scale = Vector2(0.5, 0.5)
